@@ -1,0 +1,23 @@
+name: Variables
+run-name: ¡Estoy aprendiendo a utilizar diferentes tipos de variables!
+on:
+  - push
+env:
+  python_version:  ${{ vars.VERSION_PYTHON }}
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: verificar versión de python
+        run: |
+          current_version=$(python --version)
+          echo "Version actual: $current_version"
+          echo "Version repositorio: $python_version"
+          if [[ "$current_version" == $python_version ]]; then
+            echo "La versión coincide"
+          else
+            echo "La versión no coincide"
+          fi
