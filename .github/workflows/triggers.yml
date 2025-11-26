@@ -42,7 +42,7 @@ jobs:
       - name: Correr script
         run: python hello-language.py
   hola-mundo:
-    if: ${{ github.event_name != 'workflo_dispatch' }}
+    if: ${{ github.event_name != 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
