@@ -19,5 +19,5 @@ jobs:
           if [[ "$current_version" == $python_version ]]; then
             echo "La versión coincide"
           else
-            "La versión no coincide"
+            echo "La versión no coincide"
           fi
