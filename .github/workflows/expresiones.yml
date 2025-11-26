@@ -12,7 +12,7 @@ on:
 jobs:
   notificar-pull_request:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && contains(fromJSON('["opened","reopened"]', github.event.action) && contains(github.event.head_commit.message, '[deploy]')
+    if: github.event_name == 'pull_request' && contains(fromJSON('["opened","reopened"]'), github.event.action) && contains(github.event.head_commit.message, '[deploy]')
     steps:
       - name: checkout
         uses: actions/checkout@v3
