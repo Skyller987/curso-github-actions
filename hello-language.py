@@ -1,3 +1,5 @@
+import os
+
 def main():
     nombre = os.getenv("USERNAME")
     language = os.getenv("LANGUAGE")
