@@ -1,0 +1,16 @@
+name: Context
+run-name: ¡Estoy aprendiendo a utilizar contextos!
+on:
+  - push
+jobs:
+  mostrar-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      
+      - name: Mostrar info del evento
+        run: |
+          echo "Evento ${{ github.event_name}}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Rama: ${{ github.base_ref }}"
